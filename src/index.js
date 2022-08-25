@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import $ from 'jquery';
 import './index.css';
-import './App.css';
 import dnd_logo from "./img/DnD_logo.png";
 import BI_logo from "./img/BI_logo.png";
 import reportWebVitals from './reportWebVitals';
