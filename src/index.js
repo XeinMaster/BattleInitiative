@@ -220,7 +220,7 @@ root.render(
 			<div className='auto-fighter-div'>
 				<div className='battle-fighters-selector'>
 					<div className='auto-fighter-table'>
-						<table className='battle-fighter-list' cellspacing="0">
+						<table className='battle-fighter-list' cellSpacing="0">
 							<thead>
 								<tr className='battle-fighters-list-header'>
 									<td id="fighter-basic-name">Name</td>
@@ -289,7 +289,7 @@ root.render(
 				</div>
 
 				<div className='battle-fighters-results'>
-					<table id="figh-results-table" cellspacing="0">
+					<table id="figh-results-table" cellSpacing="0">
 						<thead>
 							<tr className="results-table-header">
 								<td>Name</td>
@@ -363,7 +363,7 @@ function ReadyFighters() {
 			let temporal_hit_bonus = document.getElementById(element.id).getElementsByClassName("battle-fighter-hit-bonus")[0].innerText;
 			let temporal_dice_number = document.getElementById(element.id).getElementsByClassName("battle-fighter-dice-number")[0].innerText;
 			let temporal_dice_type = document.getElementById(element.id).getElementsByClassName("dice-type-selector-dyn")[0].value;
-			let temporal_dmg_bonus = document.getElementById(element.id).getElementsByClassName("battle-fighter-dmg-bonus")[0].value;
+			let temporal_dmg_bonus = document.getElementById(element.id).getElementsByClassName("battle-fighter-dmg-bonus")[0].innerText;
 			let temporal_adventage = document.getElementById(element.id).getElementsByClassName("battle-fighter-adv-check-dyn")[0].checked;
 			let temporal_armor_obj = document.getElementById(element.id).getElementsByClassName("battle-fighter-armor-objective")[0].innerText;
 			f_ids.set("id", element.id);
@@ -406,6 +406,7 @@ function ReadyFighters() {
 				let hit_bonus = f_ids.get("hit_bonus");
 				let dmg_bonus = f_ids.get("dmg_bonus");
 				if (adv === true) {
+					attacks = attacks * 2;
 					for (let i = attacks; i > 0; i--) {
 						let attack_throw1 = Math.floor(Math.random() * 20) + 1;
 						let attack_throw2 = Math.floor(Math.random() * 20) + 1;
@@ -419,7 +420,8 @@ function ReadyFighters() {
 					};
 				} else {
 					for (let i = attacks; i > 0; i--) {
-						let attack_throw = Math.floor(Math.random() * 20) + 1 + hit_bonus;
+						let attack_throw_d = Math.floor(Math.random() * 20) + 1;
+						let attack_throw = attack_throw_d + parseInt(hit_bonus);
 						if (attack_throw >= f_ids.get("armor_obj")) {
 							hits += 1;
 						} else {
@@ -428,25 +430,27 @@ function ReadyFighters() {
 					};
 				};
 				
-				let damage_type = 0;
+				let damage_type = 1;
 				if (f_ids.get("dice_type") === "d4") {
-					damage_type = 4;
+					damage_type = Math.floor(Math.random() * 4) + 1;
 				} else if (f_ids.get("dice_type") === "d6") {
-					damage_type = 6;
+					damage_type = Math.floor(Math.random() * 6) + 1;
 				} else if (f_ids.get("dice_type") === "d8") {
-					damage_type = 8;
+					damage_type = Math.floor(Math.random() * 8) + 1;
 				} else if (f_ids.get("dice_type") === "d10") {
-					damage_type = 10;
+					damage_type = Math.floor(Math.random() * 10) + 1;
 				} else if (f_ids.get("dice_type") === "d12") {
-					damage_type = 12;
+					damage_type = Math.floor(Math.random() * 12) + 1;
 				} else if (f_ids.get("dice_type") === "d20") {
-					damage_type = 20;
+					damage_type = Math.floor(Math.random() * 20) + 1;
 				} else if (f_ids.get("dice_type") === "d100") {
-					damage_type = 100;
+					damage_type = Math.floor(Math.random() * 100) + 1;
 				} else {
-					damage_type = 6;
+					damage_type = 1;
 				};
-				let damage =  hits * damage_type + dmg_bonus;
+				let damage_attk =  hits * damage_type;
+				let damage_bon = hits * dmg_bonus;
+				let damage = damage_attk + damage_bon;
 
 				let result = new Results(name, attacks, hits, misses, damage);
 				result.appendTo('#figh-results-table tbody');
