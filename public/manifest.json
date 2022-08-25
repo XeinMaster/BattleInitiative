@@ -1,0 +1,11 @@
+{
+  "short_name": "DnDBI",
+  "name": "D&D Battle Inititative",
+  "icons": [
+    
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

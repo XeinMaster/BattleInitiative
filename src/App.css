@@ -1,0 +1,325 @@
+html {
+	background-image: url("./img/background.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.header_div {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.logo {
+	display: flex;
+	justify-content: center;
+}
+
+#DND_logo {
+	height: 180px;
+	background: rgb(255,255,255);
+	background: radial-gradient(circle, rgba(255,255,255,1) 7%, rgba(255,255,255,0) 100%);
+	border-radius: 50px;
+}
+
+#BI_logo {
+	height: 150px;
+}
+
+#root {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	width: 100%;
+}
+
+
+/* init table, tr and td start */
+#battle-character-hp-edit-hidden {
+	display: none;
+}
+
+
+.battle-character-list tr {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.battle-character-list th {
+	text-align: center;
+}
+
+
+#battle-basic-name {
+	width: 25%;
+}
+
+#battle-basic-init {
+	width: 4%;
+}
+
+#battle-basic-hp {
+	width: 14%;
+}
+
+#battle-basic-hp-edit {
+	width: 0;
+}
+
+#battle-basic-status {
+	width: 25%;
+}
+
+#battle-basic-ac {
+	width: 4%;
+}
+
+#battle-basic-button {
+	width: 13.5%;
+}
+
+.battle-character-name {
+	width: 25%;
+}
+
+.battle-character-initiative {
+	width: 4%;
+}
+
+.battle-character-hp {
+	width: 14%;
+}
+
+.battle-character-hp-edit {
+	width: 0;
+}
+
+.battle-character-status {
+	width: 25%;
+}
+
+.battle-character-armor {
+	width: 4%;
+}
+
+.battle-character-button {
+	width: 13.5%;
+}
+
+.battle-character-erase {
+	width: 13.5%;
+}
+
+#add-new-battle-character input {
+	width: 100%;
+	text-align: center;
+}
+/* init table, tr and td end */
+
+/* fighters table, tr and td start */
+
+.battle-fighter-list tr {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.battle-fighter-list td {
+	text-align: center;
+}
+
+#fighter-basic-name {
+	width: 25%;
+}
+
+#fighter-basic-attacks {
+	width: 5%;
+}
+
+#fighter-basic-hit-bonus {
+	width: 7%;
+}
+
+#fighter-basic-dice-num {
+	width: 16%;
+}
+
+#fighter-basic-dice-type {
+	width: 0%;
+}	
+
+#fighter-basic-dmg-bonus {
+	width: 7%;
+}
+
+#fighter-basic-adv {
+	width: 3%;
+}
+
+#fighter-basic-ac-obj {
+	width: 5%;
+}
+
+#fighter-basic-button {
+	width: 6%;
+}
+
+.battle-fighter-name {
+	width: 25%;
+}
+
+.battle-fighter-name select {
+	width: 85%;
+}
+
+.battle-fighter-attacks {
+	width: 5%;
+}
+
+.battle-fighter-hit-bonus {
+	width: 7%;
+}
+
+.battle-fighter-dice-number {
+	width: 7%;
+}
+
+.battle-fighter-dice-type {
+	width: 9%;
+}
+
+.battle-fighter-dice-type select {
+	width: 50%;
+}
+
+.battle-fighter-dmg-bonus {
+	width: 7%;
+}
+
+.battle-fighter-adventage {
+	width: 3%;
+}
+
+.battle-fighter-armor-objective {
+	width: 5%;
+}
+
+.battle-fighter-erase {
+	width: 6%;
+}
+
+#add-new-battle-fighter input {
+	width: 80%;
+	text-align: center;
+}
+
+.battle-fighter-button {
+	width: 6%;
+}
+
+
+/* figthers table, tr and td end */
+
+
+/* table generic and colors */
+
+table {
+	margin-top: 7px;
+	width: 100%;
+}
+
+table td, table th {
+  padding: 3px 2px;
+}
+table.battle-character-list tr:nth-child(even) {
+  background: rgba(214, 180, 115, 0.589);
+}
+
+.battle-fighter-erase {
+	opacity: 1;
+}
+
+table.battle-character-list thead {
+  background: rgba(156, 108, 62, 0.685);
+}
+table.battle-character-list thead th {
+  font-weight: normal;
+}
+
+#add-new-battle-character {
+	background-color: rgba(255, 255, 255, 0);
+}
+
+table.battle-fighter-list tr:nth-child(even) {
+	background: rgba(160, 121, 49, 0.678);
+}
+
+#add-new-battle-fighter {
+	background-color: rgba(255, 255, 255, 0);
+}
+
+
+
+@media (max-width: 650px) {
+	html {
+		background-image: url("./img/background.jpg");
+		background-repeat: no-repeat;
+		background-size: 700px 1500px;
+	}
+
+	.header_div {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+	
+	.logo {
+		display: flex;
+		justify-content: center;
+	}
+	
+	#DND_logo {
+		height: 75px;
+		width: 100%;
+		background: rgb(255,255,255);
+		background: radial-gradient(circle, rgba(255,255,255,1) 7%, rgba(255,255,255,0) 100%);
+		border-radius: 25px;
+	}
+	
+	#BI_logo {
+		height: 70px;
+		width: 100%;
+	}
+
+	.battle-character-list {
+		width: 99%;
+	}
+	
+	.battle-fighter-list tr {
+		display: flex;
+		width: 95%;
+		justify-content: space-between;
+		
+	}
+
+	#add-new-battle-fighter input {
+	width: 100%;
+	}
+
+	#fighter-basic-attacks {
+		margin-right: 10px;
+		margin-left: -10px
+	}
+
+	.battle-fighter-dice-type select {
+		width: 100%;
+	}
+
+
+}
