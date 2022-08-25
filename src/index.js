@@ -400,11 +400,11 @@ function ReadyFighters() {
 			function ShowResults() {
 				let name = f_ids.get("name");
 				let adv = f_ids.get("adv");
-				let attacks = f_ids.get("attacks");
+				let attacks = parseInt(f_ids.get("attacks"));
 				let hits = 0;
 				let misses = 0;
-				let hit_bonus = f_ids.get("hit_bonus");
-				let dmg_bonus = f_ids.get("dmg_bonus");
+				let hit_bonus = parseInt(f_ids.get("hit_bonus"));
+				let dmg_bonus = parseInt(f_ids.get("dmg_bonus"));
 				if (adv === true) {
 					attacks = attacks * 2;
 					for (let i = attacks; i > 0; i--) {
@@ -421,7 +421,7 @@ function ReadyFighters() {
 				} else {
 					for (let i = attacks; i > 0; i--) {
 						let attack_throw_d = Math.floor(Math.random() * 20) + 1;
-						let attack_throw = attack_throw_d + parseInt(hit_bonus);
+						let attack_throw = attack_throw_d + hit_bonus;
 						if (attack_throw >= f_ids.get("armor_obj")) {
 							hits += 1;
 						} else {
